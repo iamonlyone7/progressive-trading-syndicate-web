@@ -46,12 +46,10 @@ export function AccordionItem({
   value,
   children,
   className,
-  style,
 }: {
   value: string;
   children: React.ReactNode;
   className?: string;
-  style?: React.CSSProperties;
 }) {
   const context = useContext(AccordionContext);
   if (!context) throw new Error('AccordionItem must be used within Accordion');
@@ -62,7 +60,6 @@ export function AccordionItem({
       <div
         className={cn("group", className)}
         data-expanded={isExpanded ? '' : undefined}
-        style={style}
       >
         {children}
       </div>

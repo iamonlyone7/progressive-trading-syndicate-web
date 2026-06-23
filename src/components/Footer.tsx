@@ -22,14 +22,12 @@ export default function Footer() {
             <Link to="/#why">Why Choose Us</Link>
             <Link to="/faq">FAQ</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/privacy">Privacy Policy</Link>
-            <Link to="/terms">Terms of Service</Link>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
         <p className="footer-copy">© 2025 Progressive Trade Syndicate. All rights reserved.</p>
-        <p className="footer-reg">Mumbai — Financial Turnaround Specialists</p>
+        <p className="footer-reg">PROGRESSIVE TRADE SYNDICATE — FINANCIAL TURNAROUND SPECIALISTS</p>
       </div>
     </footer>
   );

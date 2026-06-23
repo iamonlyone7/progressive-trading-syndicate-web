@@ -34,7 +34,7 @@ export default function Nav() {
         className="progress-bar"
         style={{ scaleX }}
       />
-      <nav id="pts-nav" className={navScrolled ? 'scrolled' : ''}>
+      <nav id="pts-nav" className={`${navScrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'menu-open' : ''} ${isHome && !navScrolled && !mobileMenuOpen ? 'home-top' : ''}`}>
       <Link to="/" className="nav-logo">
         <div className="nav-logo-mark"><div className="nav-logo-mark-inner"></div></div>
         PTS
@@ -45,7 +45,7 @@ export default function Nav() {
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label="Toggle menu"
       >
-        {mobileMenuOpen ? <X size={24} color="var(--blue-hero)" /> : <Menu size={24} color="var(--text-dark)" />}
+        {mobileMenuOpen ? <X size={24} color="var(--blue-hero)" /> : <Menu size={24} color={isHome && !navScrolled ? "#ffffff" : "var(--text-dark)"} />}
       </button>
 
       <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>

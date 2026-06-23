@@ -5,21 +5,21 @@ export const MARQUEE_ITEMS = [
 ];
 
 export const SERVICES = [
-  { num:'01', icon:'Activity', title:'Financial Health Assessment & Turnaround Strategy', desc:'Deep-dive diagnostics of your balance sheet, cash position, and operational efficiency. We identify root causes, not symptoms.' },
-  { num:'02', icon:'Zap', title:'Working Capital Optimization', desc:'Release trapped cash from receivables, inventory, and payables cycles. Improve liquidity without additional borrowing.' },
-  { num:'03', icon:'Globe', title:'Trade Finance & Supply Chain Funding', desc:'Letters of credit, invoice discounting, supply chain finance — structured to keep your trade operations running smoothly.' },
-  { num:'04', icon:'Scale', title:'Debt Restructuring & Financial Advisory', desc:'Negotiate better terms, consolidate obligations, and build a debt structure your business can comfortably service and grow beyond.' },
-  { num:'05', icon:'Handshake', title:'Vendor & Supplier Credit Facilitation', desc:'Extend payment terms, secure supplier credit lines, and build supply chain resilience through better vendor relationships.' },
-  { num:'06', icon:'TrendingUp', title:'Business Cash Flow Management', desc:'Real-time cash flow monitoring, forecasting models, and actionable controls that prevent shortfalls before they become crises.' },
-  { num:'07', icon:'Target', title:'Growth & Expansion Planning', desc:'Once stabilized, we build your growth architecture — market entry, capital structuring, and strategic alliances for scale.' },
-  { num:'08', icon:'Shield', title:'Risk Assessment & Financial Controls', desc:'Build governance frameworks, internal controls, and early-warning systems that protect your financial health long-term.' },
+  { num:'01', icon:'🩺', title:'Financial Health Assessment & Turnaround Strategy', desc:'Deep-dive diagnostics of your balance sheet, cash position, and operational efficiency. We identify root causes, not symptoms.' },
+  { num:'02', icon:'⚡', title:'Working Capital Optimization', desc:'Release trapped cash from receivables, inventory, and payables cycles. Improve liquidity without additional borrowing.' },
+  { num:'03', icon:'🌐', title:'Trade Finance & Supply Chain Funding', desc:'Letters of credit, invoice discounting, supply chain finance — structured to keep your trade operations running smoothly.' },
+  { num:'04', icon:'🏗️', title:'Debt Restructuring & Financial Advisory', desc:'Negotiate better terms, consolidate obligations, and build a debt structure your business can comfortably service and grow beyond.' },
+  { num:'05', icon:'🤝', title:'Vendor & Supplier Credit Facilitation', desc:'Extend payment terms, secure supplier credit lines, and build supply chain resilience through better vendor relationships.' },
+  { num:'06', icon:'💰', title:'Business Cash Flow Management', desc:'Real-time cash flow monitoring, forecasting models, and actionable controls that prevent shortfalls before they become crises.' },
+  { num:'07', icon:'🚀', title:'Growth & Expansion Planning', desc:'Once stabilized, we build your growth architecture — market entry, capital structuring, and strategic alliances for scale.' },
+  { num:'08', icon:'🛡️', title:'Risk Assessment & Financial Controls', desc:'Build governance frameworks, internal controls, and early-warning systems that protect your financial health long-term.' },
 ];
 
 export const ABOUT_CARDS = [
-  { icon:'Building2', title:'End-to-End Support', text:'From financial assessment through implementation and beyond — we stay with you at every stage of recovery and growth.' },
-  { icon:'Link2', title:'Strong Network', text:'Direct access to financial institutions, trade partners, and capital networks that most businesses cannot reach independently.' },
-  { icon:'Ruler', title:'Tailored Strategies', text:'No two businesses are alike. Every solution is custom-built around your specific financial position and business goals.' },
-  { icon:'Infinity', title:'Long-Term Partnership', text:'We measure success by your sustainability, not just immediate relief. Our commitment extends well beyond the turnaround.' },
+  { icon:'🏛️', title:'End-to-End Support', text:'From financial assessment through implementation and beyond — we stay with you at every stage of recovery and growth.' },
+  { icon:'🔗', title:'Strong Network', text:'Direct access to financial institutions, trade partners, and capital networks that most businesses cannot reach independently.' },
+  { icon:'📐', title:'Tailored Strategies', text:'No two businesses are alike. Every solution is custom-built around your specific financial position and business goals.' },
+  { icon:'♾️', title:'Long-Term Partnership', text:'We measure success by your sustainability, not just immediate relief. Our commitment extends well beyond the turnaround.' },
 ];
 
 export const PROCESS = [

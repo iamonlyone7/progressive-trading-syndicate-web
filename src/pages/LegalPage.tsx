@@ -1,160 +1,80 @@
 import { useEffect } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import CTA from "../components/CTA";
 
-const services = [
+const criminalServices = [
   {
-    num: "01",
-    title: "Debt Resolution & Creditor Negotiations",
-    desc: "Legal restructuring of obligations, forbearance agreements, and covenant waivers to stabilize operations and protect stakeholder value.",
+    name: "Initial Consultation",
+    price: "Free",
+    desc: "A thorough review of your case, legal rights, and potential defense strategies."
   },
   {
-    num: "02",
-    title: "Insolvency & Bankruptcy Advisory",
-    desc: "Strategic guidance through insolvency proceedings, including pre-packaged solutions and voluntary arrangements for corporate entities.",
+    name: "Bail Applications",
+    price: "$1,500 - $3,000",
+    desc: "Preparation and representation for bail hearings to secure your release pending trial."
   },
   {
-    num: "03",
-    title: "Contract & Trade Law",
-    desc: "Drafting and review of trade finance agreements, supply chain contracts, and cross-border commercial arrangements.",
+    name: "Summary Conviction Offenses",
+    price: "From $2,500",
+    desc: "Defense for less serious criminal matters, including minor theft and simple assault."
   },
   {
-    num: "04",
-    title: "Regulatory Compliance Review",
-    desc: "Ensuring alignment with financial regulations, corporate governance requirements, and statutory filing obligations.",
+    name: "Indictable Offenses",
+    price: "From $5,000",
+    desc: "Comprehensive defense for serious charges, requiring extensive preparation and trial work."
   },
   {
-    num: "05",
-    title: "Dispute Resolution & Litigation",
-    desc: "Representation in commercial disputes, arbitration proceedings, and regulatory tribunals with a focus on swift, cost-effective outcomes.",
+    name: "DUI & Traffic Offenses",
+    price: "From $3,500",
+    desc: "Specialized representation for impaired driving and serious traffic-related charges."
   },
   {
-    num: "06",
-    title: "Corporate Governance Advisory",
-    desc: "Board structuring, fiduciary duty compliance, and governance framework design for privately held and publicly listed entities.",
-  },
+    name: "Criminal Appeals",
+    price: "From $7,500",
+    desc: "Reviewing trial records and arguing for overturned convictions or reduced sentences."
+  }
 ];
 
 export default function LegalPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    const els = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    els.forEach(el => io.observe(el));
-    return () => io.disconnect();
   }, []);
 
   return (
     <>
       <Nav />
-      <div id="main-content">
-        {/* Hero */}
-        <section id="about-hero" className="pts-section" style={{ background: 'var(--deep)' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <div className="section-eyebrow reveal">
-              <div className="section-eyebrow-line"></div>
-              <span className="section-eyebrow-text">Legal Practice</span>
-            </div>
-            <h1 className="section-h2 reveal reveal-delay-1" style={{ fontSize: 'clamp(44px, 6vw, 84px)', marginBottom: '40px' }}>
-              Legal architecture
-              <br />
-              <em>for recovery</em>
+      <div className="pt-24 min-h-screen bg-white">
+        <section className="pts-section text-[#0d1f4f]">
+          <div className="section-container max-w-5xl mx-auto px-6 md:px-12">
+            <h1 className="text-4xl md:text-6xl font-medium mb-6 tracking-tight text-[#0d1f4f]">
+              Criminal Defense Pricing
             </h1>
-            <div className="reveal reveal-delay-2 about-hero-grid">
-              <div>
-                <p className="body-text" style={{ fontSize: '18px', lineHeight: '1.8', color: 'var(--text-dark)', marginBottom: 0 }}>
-                  A focused legal practice built around financial restructuring, insolvency, and commercial law — no distractions, no unrelated departments, no overhead passed to clients.
-                </p>
-              </div>
-              <div>
-                <p className="body-text" style={{ color: 'var(--text-mid)', lineHeight: '1.8', marginBottom: '24px' }}>
-                  Our team provides strategic legal counsel across six key disciplines, working in close coordination with our financial advisory practice to deliver integrated turnaround solutions.
-                </p>
-                <a href="#services" className="btn-primary" style={{ display: 'inline-flex' }}>
-                  <span>Explore Services</span><span>→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Services */}
-        <section id="services" className="pts-section" style={{ background: 'var(--black)' }}>
-          <div className="services-header reveal">
-            <div>
-              <div className="section-eyebrow">
-                <div className="section-eyebrow-line"></div>
-                <span className="section-eyebrow-text">Practice Areas</span>
-              </div>
-              <h2 className="section-h2">Six disciplines,<br /><em>one focus.</em></h2>
-            </div>
-            <p className="services-header-right">
-              Every area of financial law we cover is directly tied to corporate turnaround and recovery. No unrelated departments, no diluted expertise.
+            <p className="text-lg md:text-xl text-zinc-600 mb-20 leading-relaxed max-w-2xl">
+              We provide transparent, flat-fee billing for most criminal matters. 
+              Our team understands the stakes and is dedicated to protecting your rights with uncompromising defense strategies.
             </p>
-          </div>
-          <div className="services-grid">
-            {services.map((s, i) => (
-              <div className={'service-card reveal' + (i % 4 !== 0 ? ' reveal-delay-' + (i % 4) : '')} key={i}>
-                <span className="service-num">{s.num}</span>
-                <div className="service-title">{s.title}</div>
-                <div className="service-desc" style={{ color: 'var(--text-dark)' }}>{s.desc}</div>
-              </div>
-            ))}
-          </div>
-        </section>
 
-        {/* Creed */}
-        <section className="pts-section" style={{ background: 'var(--deep)', textAlign: 'center' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-            <div className="section-eyebrow reveal" style={{ justifyContent: 'center' }}>
-              <div className="section-eyebrow-line"></div>
-              <span className="section-eyebrow-text">Our Creed</span>
-              <div className="section-eyebrow-line" style={{ transform: 'scaleX(-1)' }}></div>
-            </div>
-            <h2 className="section-h2 reveal">Four things we<br /><em>do differently</em></h2>
-            <div style={{ textAlign: 'left', marginTop: '48px' }}>
-              {[
-                "We never advise outside our domain — our legal practice is built exclusively around financial restructuring and corporate recovery.",
-                "Every engagement begins with a fixed-fee discovery phase so you understand the full scope before committing to a larger retainer.",
-                "Our partners are accessible. No account managers, no deflection — direct access to the lawyer handling your matter.",
-                "We litigate only when necessary. Where possible, we resolve through negotiation, arbitration, or structured settlement.",
-              ].map((p, i) => (
-                <div key={i} className={'reveal' + (i > 0 ? ' reveal-delay-' + i : '')} style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', padding: '20px 0', borderBottom: i < 3 ? '1px solid var(--border-soft)' : 'none' }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', color: 'var(--gold-dim)', letterSpacing: '0.1em', whiteSpace: 'nowrap', minWidth: '28px' }}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p style={{ fontSize: '15px', color: 'var(--text-dark)', lineHeight: '1.7' }}>
-                    {p}
-                  </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+              {criminalServices.map((service, idx) => (
+                <div key={idx} className="flex flex-col border-t border-zinc-200 pt-6 group">
+                  <h3 className="text-xl font-medium text-[#0d1f4f] mb-2">{service.name}</h3>
+                  <div className="text-3xl font-light text-[#0d1f4f] mb-4 tracking-tight">{service.price}</div>
+                  <p className="text-base text-zinc-600 leading-relaxed group-hover:text-zinc-900 transition-colors duration-300">{service.desc}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* CTA */}
-        <section id="cta" className="pts-section" style={{ background: 'var(--blue-hero)', textAlign: 'center' }}>
-          <div className="cta-glow"></div>
-          <div className="section-eyebrow reveal" style={{ justifyContent: 'center' }}>
-            <div className="section-eyebrow-line" style={{ background: 'var(--blue-sky)' }}></div>
-            <span className="section-eyebrow-text" style={{ color: 'var(--blue-sky)' }}>Get Started</span>
-            <div className="section-eyebrow-line" style={{ transform: 'scaleX(-1)', background: 'var(--blue-sky)' }}></div>
-          </div>
-          <h2 className="section-h2 reveal" style={{ color: '#ffffff' }}>
-            Confidential consultation,<br /><em style={{ color: 'var(--blue-sky)' }}>zero obligation</em>
-          </h2>
-          <p className="reveal reveal-delay-1" style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '480px', margin: '0 auto 48px', fontSize: '16px', lineHeight: '1.7' }}>
-            We begin every relationship with a candid conversation about your situation. No pitch. No pressure. Just a clear assessment of your options.
-          </p>
-          <div className="cta-buttons reveal reveal-delay-2">
-            <a href="/contact" className="btn-primary" style={{ background: 'var(--blue-sky)', display: 'inline-flex' }}>
-              <span>Book a Consultation</span><span>→</span>
-            </a>
+            <div className="mt-24 pt-12 border-t border-zinc-200">
+              <h3 className="text-lg font-medium text-[#0d1f4f] mb-3">Note on Billing Arrangements</h3>
+              <p className="text-base text-zinc-600 leading-relaxed max-w-3xl">
+                The prices listed above are estimates for typical cases. Every case is unique. Complex matters involving multiple charges, extensive evidence, or prolonged trials may require custom billing. We provide a detailed, totally transparent fee agreement before any work begins.
+              </p>
+            </div>
           </div>
         </section>
       </div>
+      <CTA />
       <Footer />
     </>
   );

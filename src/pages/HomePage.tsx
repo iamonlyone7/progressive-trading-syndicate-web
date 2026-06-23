@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import Loader from "../components/Loader";
 import Nav from "../components/Nav";
 import Hero from "../components/Hero";
@@ -33,8 +32,6 @@ export default function HomePage() {
 
   return (
     <div id="pts-root">
-      <SmoothCursor />
-      <div id="main-content">
       <Loader loaderOut={loaderOut} />
       <Nav />
       <Hero />
@@ -46,7 +43,6 @@ export default function HomePage() {
       <Testimonial />
       <CTA />
       <Footer />
-      </div>
     </div>
   );
 }

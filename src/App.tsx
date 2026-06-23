@@ -4,14 +4,13 @@ import AboutPage from "./pages/AboutPage";
 import LegalPage from "./pages/LegalPage";
 import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
-import PrivacyPage from "./pages/PrivacyPage";
-import TermsPage from "./pages/TermsPage";
-import NotFoundPage from "./pages/NotFoundPage";
 import SmoothScroll from "./components/SmoothScroll";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function App() {
   return (
     <SmoothScroll>
+      <SmoothCursor />
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -19,9 +18,6 @@ export default function App() {
           <Route path="/legal" element={<LegalPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </SmoothScroll>
