@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { AuroraBackground } from "../components/ui/aurora-background";
 import { MoveRight } from "lucide-react";
 
@@ -18,9 +17,7 @@ export default function AboutPage() {
 
   return (
     <div id="pts-root">
-      <SmoothCursor />
       <Nav />
-      <div id="main-content">
       
       {/* About Hero */}
       <section id="about-hero" className="pts-section relative overflow-hidden">
@@ -117,7 +114,6 @@ export default function AboutPage() {
       </section>
 
       <Footer />
-      </div>
     </div>
   );
 }

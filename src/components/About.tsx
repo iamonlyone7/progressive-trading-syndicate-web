@@ -1,5 +1,4 @@
 import { ABOUT_CARDS } from "../data/constants";
-import { Icon } from "./icons";
 
 export default function About() {
   return (
@@ -23,9 +22,7 @@ export default function About() {
       <div className="about-right">
         {ABOUT_CARDS.map((c, i) => (
           <div className={'about-card reveal reveal-delay-' + (i + 1)} key={i}>
-            <div className="about-card-icon">
-              <Icon name={c.icon} size={18} />
-            </div>
+            <div className="about-card-icon">{c.icon}</div>
             <div>
               <div className="about-card-title">{c.title}</div>
               <div className="about-card-text">{c.text}</div>

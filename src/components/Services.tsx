@@ -1,5 +1,4 @@
 import { SERVICES } from "../data/constants";
-import { Icon } from "./icons";
 
 export default function Services() {
   return (
@@ -20,9 +19,7 @@ export default function Services() {
         {SERVICES.map((s, i) => (
           <div className={'service-card reveal' + (i % 4 !== 0 ? ' reveal-delay-' + (i % 4) : '')} key={i}>
             <span className="service-num">{s.num}</span>
-            <span className="service-icon">
-              <Icon name={s.icon} size={28} />
-            </span>
+            <span className="service-icon">{s.icon}</span>
             <div className="service-title">{s.title}</div>
             <div className="service-desc text-[#0d1f4f]">{s.desc}</div>
             <a href="#cta" className="service-link">Learn more →</a>

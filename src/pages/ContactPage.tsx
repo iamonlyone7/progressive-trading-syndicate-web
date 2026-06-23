@@ -1,70 +1,16 @@
-import { useEffect, useState, FormEvent } from "react";
+import { useEffect } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 export default function ContactPage() {
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const validate = (form: HTMLFormElement) => {
-    const data = new FormData(form);
-    const errs: Record<string, string> = {};
-
-    const firstName = data.get("firstName") as string;
-    const lastName = data.get("lastName") as string;
-    const email = data.get("email") as string;
-    const message = data.get("message") as string;
-
-    if (!firstName?.trim()) errs.firstName = "First name is required";
-    if (!lastName?.trim()) errs.lastName = "Last name is required";
-    if (!email?.trim()) {
-      errs.email = "Email address is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errs.email = "Enter a valid email address";
-    }
-    if (!message?.trim()) errs.message = "Please describe your situation";
-
-    return errs;
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const errs = validate(e.currentTarget);
-    setErrors(errs);
-
-    if (Object.keys(errs).length === 0) {
-      setSubmitted(true);
-    }
-  };
-
-  if (submitted) {
-    return (
-      <>
-        <Nav />
-        <div id="main-content" className="pt-24 min-h-screen bg-white flex items-center justify-center">
-          <div className="text-center max-w-lg mx-auto px-6">
-            <div className="w-16 h-16 border-2 border-[var(--blue-mid)] flex items-center justify-center mx-auto mb-8">
-              <span className="text-2xl text-[var(--blue-mid)]">✓</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-serif font-light mb-4 text-[var(--blue-hero)]">Inquiry received</h1>
-            <p className="text-lg text-[var(--text-mid)] leading-relaxed">
-              A senior partner will review your submission and reach out within 24 hours. All information remains strictly confidential.
-            </p>
-          </div>
-        </div>
-        <Footer />
-      </>
-    );
-  }
-
   return (
     <>
       <Nav />
-      <div id="main-content" className="pt-24 min-h-screen bg-white">
+      <div className="pt-24 min-h-screen bg-white">
         <section className="pts-section text-[#0d1f4f]">
           <div className="section-container max-w-6xl mx-auto px-6 md:px-12">
             <h1 className="text-4xl md:text-6xl font-medium mb-6 tracking-tight text-[#0d1f4f]">
@@ -78,29 +24,25 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
               {/* Form Side */}
               <div className="flex flex-col">
-                <form className="flex flex-col gap-6" noValidate onSubmit={handleSubmit}>
+                <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
                   <div className="flex flex-col sm:flex-row gap-6">
                     <div className="flex flex-col gap-2 flex-1">
                       <label htmlFor="firstName" className="text-sm font-medium text-[#0d1f4f]">First Name</label>
                       <input 
                         type="text" 
                         id="firstName" 
-                        name="firstName"
                         className="border border-zinc-300 rounded px-4 py-3 text-[#0d1f4f] focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                        placeholder="Rajesh"
+                        placeholder="John" 
                       />
-                      {errors.firstName && <span className="text-xs text-red-500 mt-1">{errors.firstName}</span>}
                     </div>
                     <div className="flex flex-col gap-2 flex-1">
                       <label htmlFor="lastName" className="text-sm font-medium text-[#0d1f4f]">Last Name</label>
                       <input 
                         type="text" 
                         id="lastName" 
-                        name="lastName"
                         className="border border-zinc-300 rounded px-4 py-3 text-[#0d1f4f] focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                        placeholder="Patel"
+                        placeholder="Doe" 
                       />
-                      {errors.lastName && <span className="text-xs text-red-500 mt-1">{errors.lastName}</span>}
                     </div>
                   </div>
                   
@@ -109,11 +51,9 @@ export default function ContactPage() {
                     <input 
                       type="email" 
                       id="email" 
-                      name="email"
                       className="border border-zinc-300 rounded px-4 py-3 text-[#0d1f4f] focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                      placeholder="rajesh@exportshouse.in"
+                      placeholder="john@company.com" 
                     />
-                    {errors.email && <span className="text-xs text-red-500 mt-1">{errors.email}</span>}
                   </div>
 
                   <div className="flex flex-col gap-2">
@@ -121,9 +61,8 @@ export default function ContactPage() {
                     <input 
                       type="text" 
                       id="company" 
-                      name="company"
                       className="border border-zinc-300 rounded px-4 py-3 text-[#0d1f4f] focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                      placeholder="Konkan Exports Pvt Ltd"
+                      placeholder="Acme Corp" 
                     />
                   </div>
                   
@@ -131,12 +70,10 @@ export default function ContactPage() {
                     <label htmlFor="message" className="text-sm font-medium text-[#0d1f4f]">How can we help you?</label>
                     <textarea 
                       id="message" 
-                      name="message"
                       rows={5}
                       className="border border-zinc-300 rounded px-4 py-3 text-[#0d1f4f] focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-y"
-                      placeholder="Describe your situation — we treat every submission in confidence..."
+                      placeholder="Please describe your situation briefly..."
                     ></textarea>
-                    {errors.message && <span className="text-xs text-red-500 mt-1">{errors.message}</span>}
                   </div>
 
                   <button 
@@ -166,7 +103,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-xs uppercase tracking-widest text-[#0d1f4f]/50 font-bold mb-2">Phone</h4>
                     <a href="tel:+919999999999" className="text-lg font-medium text-[#0d1f4f] hover:text-[#1a367d] transition-colors">
-                      +91 22 6847 1934
+                      +91 999 999 9999
                     </a>
                   </div>
 

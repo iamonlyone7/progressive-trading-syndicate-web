@@ -28,7 +28,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" ref={containerRef} className="relative overflow-hidden min-h-[100dvh]">
+    <section id="hero" ref={containerRef} className="relative overflow-hidden min-h-[100svh]">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <video
@@ -43,7 +43,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/40 z-10"></div>
       </div>
 
-      <div className="relative z-10 flex flex-col justify-center min-h-[100dvh] px-[24px] md:px-[48px] w-full pb-20">
+      <div className="relative z-10 flex flex-col justify-center min-h-[100svh] px-[24px] md:px-[48px] w-full pb-20">
         <div className="hero-content" ref={contentRef}>
           <h1 className="hero-h1 !text-white">
             <span className="line"><span>Turning Financial</span></span>

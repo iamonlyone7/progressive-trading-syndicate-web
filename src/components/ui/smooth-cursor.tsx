@@ -211,14 +211,14 @@ export function SmoothCursor({
       })
     }
 
-    document.body.style.cursor = "none"
+    document.body.classList.add("custom-cursor-active")
     window.addEventListener("pointermove", throttledPointerMove, {
       passive: true,
     })
 
     return () => {
       window.removeEventListener("pointermove", throttledPointerMove)
-      document.body.style.cursor = "auto"
+      document.body.classList.remove("custom-cursor-active")
       if (rafId) cancelAnimationFrame(rafId)
       if (timeout !== null) {
         clearTimeout(timeout)
@@ -240,7 +240,7 @@ export function SmoothCursor({
         translateY: "-50%",
         rotate: rotation,
         scale: scale,
-        zIndex: 100,
+        zIndex: 9999,
         pointerEvents: "none",
         willChange: "transform",
         opacity: isVisible ? 1 : 0,
